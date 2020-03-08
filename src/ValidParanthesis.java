@@ -7,7 +7,7 @@ public class ValidParanthesis {
         ValidParanthesis obj = new ValidParanthesis();
         System.out.println(obj.isValidExp("()()()(){}{}{}[][][]"));
 
-        System.out.println(obj.isValidExp("()(()"));
+        System.out.println(obj.longestValidParentheses("()(()"));
     }
 
     public int longestValidParentheses(String s) {
