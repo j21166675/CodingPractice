@@ -30,8 +30,8 @@ public class RemoveElement {
 
     public static void main(String a[]){
         RemoveElement obj = new RemoveElement();
-        obj.removeElement(new int[]{1,2,3,4,5,6}, 2);
-        obj.removeElement(new int[]{1,2,2,2,4,2,6}, 2);
+       System.out.println( obj.removeElement(new int[]{1,2,3,4,5,6}, 2));
+        System.out.println( obj.removeElement(new int[]{1,2,2,2,4,2,6}, 2));
     }
 
 }
