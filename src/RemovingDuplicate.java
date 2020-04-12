@@ -2,10 +2,10 @@ public class RemovingDuplicate {
 
     public static void main(String[] a) {
         RemovingDuplicate obj = new RemovingDuplicate();
-        System.out.println(obj.removeDuplicates(new int[]{1, 1, 2}));
+       obj.removeDuplicatesWithOutExtraSpace(new int[]{1, 1, 2,4,5,6,7,7,7,7,7,7,7,8,9,9,9},true);
     }
 
-    public int[] removeDuplicates(int[] nums) {
+    public int[] removeDuplicatesWithExtraSpace(int[] nums) {
         int sum = 1;
         int firstNum = nums[0];
         int[] finalArr = new int[nums.length];
@@ -26,6 +26,20 @@ public class RemovingDuplicate {
         }
         return finalArr;
 
+    }
+
+
+    private void removeDuplicatesWithOutExtraSpace(int[] nums,Boolean flag){
+        int j=0;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i] != nums[j]){
+                j++;
+                nums[j] = nums[i];
+            }
+        }
+        for(int i=0;i<=j;i++){
+            System.out.println(nums[i]);
+        }
     }
 }
 
