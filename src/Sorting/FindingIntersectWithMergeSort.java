@@ -10,7 +10,7 @@ public class FindingIntersectWithMergeSort {
         int i=0;
         int j=0;
         HashSet<Integer> set = new HashSet<Integer>();
-        while(i<arr1.length && j<arr2.length ){
+        while(true){
             if(arr1[i]==arr2[j]){
                 set.add(arr1[i]);
                 i++;
@@ -18,9 +18,15 @@ public class FindingIntersectWithMergeSort {
             }
             else if(arr1[i]>arr2[j]){
                 j++;
+                if(arr2.length <= j){
+                    break;
+                }
             }
             else{
                 i++;
+                if(arr1.length <= i){
+                    break;
+                }
             }
         }
 
