@@ -3,20 +3,21 @@ package Sorting;
 public class LomutosPartitionImpl {
 
     private int[] partition(int[] arr) {
-        int pivot = arr[arr.length - 1];
-        int j = -1;
-        for (int i = 0; i <= arr.length - 1; i++) {
-            if (arr[i] < pivot) {
-                j++;
-                if (i != j) {
+        int pivot = arr[arr.length-1];
+        int smaller = -1;
+        int i=1;
+        for( i=1;i<=arr.length-1;i++){
+            while(smaller <= 0 && arr[i] < pivot){
+                smaller++;
+                if(i != smaller){
                     int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    arr[i] = arr[smaller];
+                    arr[smaller] = temp;
                 }
             }
         }
-        arr[arr.length - 1] = arr[j + 1];
-        arr[j + 1] = pivot;
+        arr[i-1] = arr[smaller+1] ;
+        arr[smaller+1] = pivot;
         return arr;
     }
 
