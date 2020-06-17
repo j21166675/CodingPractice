@@ -4,7 +4,7 @@ public class QuickSortImpl {
     private int partition(int[] arr, int start, int end){
         int pivot = arr[end];
         int j=start-1;
-        for(int i=start;i<=end-1;i++){
+        for(int i=start;i<end;i++){
             if(arr[i] < pivot){
                 j++;
                 if(i != j) {
@@ -16,19 +16,23 @@ public class QuickSortImpl {
         }
         arr[end] = arr[j+1];
         arr[j+1] = pivot;
-        return 0;
+        return j+1;
     }
 
-    private int[] quicksort(int[] arr)throws Exception{
-        if(arr.length<=0) throw new Exception(" inGFvalid array ");
-        int low =0;
-        int high =arr.length-1;
-        int pi = partition(arr, low, high );
+    private int[] quicksort(int[] arr, int low, int high)throws Exception{
+        if(arr.length<=0) throw new Exception(" Invalid array ");
+        if(low<high){
+            int pi = partition(arr, low, high );
+            quicksort(arr,low,pi-1);
+            quicksort(arr,pi+1, high);
+        }
 
-        return null;
+        return arr;
     }
     public static void main(String a[])throws Exception{
         QuickSortImpl obj = new QuickSortImpl();
-        for(int i:obj.quicksort(new int[]{11,3,10,2,8}));
+        for(int i:obj.quicksort(new int[]{11,3,10,2,8},0,4)){
+            System.out.println(i);
+        }
     }
 }
