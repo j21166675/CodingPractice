@@ -44,5 +44,9 @@ public class SelectionSortImpl{
         for(int i:obj.selectionSort(new int[]{5,3,6,82,3,9,10,4,3,8,9})){
             System.out.println(i);
         }
+
+        for(int i:obj.bruteForce(new int[]{5,3,6,82,3,9,10,4,3,8,9})){
+            System.out.println(i);
+        }
     }
 }
