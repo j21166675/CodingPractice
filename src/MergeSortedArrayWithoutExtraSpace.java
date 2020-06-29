@@ -20,7 +20,6 @@ public class MergeSortedArrayWithoutExtraSpace {
         return j+1;
     }
 
-
     private int[] mergeArr(int[] arr1, int[] arr2)throws Exception {
         if(arr1.length <=0 || arr2.length <=0) throw new Exception(" Invalid Array ");
 
@@ -58,7 +57,7 @@ public class MergeSortedArrayWithoutExtraSpace {
     }
     public static void main(String a[])throws Exception{
         MergeSortedArrayWithoutExtraSpace obj = new MergeSortedArrayWithoutExtraSpace();
-        for(int i:obj.quicksort(obj.mergeArr(new int[]{1,2,3,0,0,0}, new int[]{2,5,1}),0, 5)){
+        for(int i:obj.quicksort(obj.mergeArr(new int[]{1,200,3,0,0,0}, new int[]{-2,5,1}),0, 5)){
             System.out.println(i);
         }
     }
