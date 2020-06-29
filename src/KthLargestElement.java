@@ -28,7 +28,6 @@ public class KthLargestElement {
         int pos = partition(arr, low, high, k);
         int kth = 0;
         if(pos == (arr.length-k)){
-            kth = arr[pos];
              return arr[pos];
         }
         else if(pos < (arr.length-k)){
@@ -43,7 +42,7 @@ public class KthLargestElement {
     public static void main(String a[])throws Exception{
         KthLargestElement obj = new KthLargestElement();
         int[] arr= new int[]{2,3,6,5,8,7,4};
-        System.out.println(obj.getKthLargest(arr, 0, arr.length-1,3));
+        System.out.println(obj.getKthLargest(arr, 0, arr.length-1,5));
     }
 
 }
