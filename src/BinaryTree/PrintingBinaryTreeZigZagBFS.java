@@ -1,7 +1,5 @@
 package BinaryTree;
 
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -42,7 +40,7 @@ public class PrintingBinaryTreeZigZagBFS {
     }
 
     public static void main(String a[]) throws Exception {
-        TreeNode root = BSTHelper.bstCreator();
+        TreeNode root = BSTHelper.createBst();
         PrintingBinaryTreeZigZagBFS obj2 = new PrintingBinaryTreeZigZagBFS();
         for (ArrayList<Integer> i : obj2.bfsZigzag(root)) {
             for (int j : i) {

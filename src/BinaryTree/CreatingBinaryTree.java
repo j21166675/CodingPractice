@@ -3,7 +3,7 @@ package BinaryTree;
 import com.sun.source.tree.Tree;
 
 class CreatingBinaryTree {
-    private TreeNode createBT(int[] sortedArr, int start, int end) throws Exception {
+    public TreeNode createBT(int[] sortedArr, int start, int end) throws Exception {
        if (start > end) {
             return null;
         }
@@ -14,7 +14,7 @@ class CreatingBinaryTree {
         return root;
     }
 
-    private void preOrderTraversal(TreeNode root) throws Exception {
+    public void preOrderTraversal(TreeNode root) throws Exception {
         if (root == null) return;
         System.out.println(" " + root.data);
         preOrderTraversal(root.left);

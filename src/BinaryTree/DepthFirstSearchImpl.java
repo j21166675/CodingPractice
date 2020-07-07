@@ -34,9 +34,8 @@ public class DepthFirstSearchImpl {
     }
 
     public static void main(String a[]) throws Exception {
-        int[] sortedArr = new int[]{-10, -3, -1, 1, 3, 6};
+        TreeNode root = BSTHelper.createBst();
         DepthFirstSearchImpl obj = new DepthFirstSearchImpl();
-        TreeNode root = obj.createBST(sortedArr, 0, sortedArr.length - 1);
 
         System.out.print("Pre-Order : ");
         obj.preOrderTraversalPrinting(root);

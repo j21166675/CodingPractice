@@ -1,7 +1,5 @@
 package BinaryTree;
 
-import Recursive.Fibonacci;
-
 public class FindingMinBST {
 
     private int findMin(TreeNode root) throws Exception {
@@ -15,7 +13,7 @@ public class FindingMinBST {
     }
 
     public static void main(String a[]) throws Exception {
-        TreeNode root = BSTHelper.bstCreator();
+        TreeNode root = BSTHelper.createBst();
         FindingMinBST obj = new FindingMinBST();
         System.out.println(obj.findMin(root));
     }

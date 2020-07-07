@@ -1,8 +1,5 @@
 package BinaryTree;
 
-import Recursive.LetterCaseVariations;
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -36,18 +33,13 @@ public class LevelOrderTraversal {
     }
 
     public static void main(String a[]) throws Exception {
-
+        TreeNode root = BSTHelper.createBst();
         LevelOrderTraversal obj = new LevelOrderTraversal();
-        int[] sortedArray = new int[]{-10, 1, 2, 3, 4, 5, 6};
-        CreatingBinaryTree cbtObj = new CreatingBinaryTree();
-        TreeNode root = cbtObj.createBT(sortedArray, 0, sortedArray.length - 1);
-        LevelOrderTraversal obj2 = new LevelOrderTraversal();
-        for (ArrayList<Integer> i : obj2.bfs(root)) {
+        for (ArrayList<Integer> i : obj.bfs(root)) {
             for (int j : i) {
                 System.out.print(" " + j);
             }
             System.out.print('\n');
         }
     }
-
 }

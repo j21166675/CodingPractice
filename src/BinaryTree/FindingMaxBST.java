@@ -11,7 +11,7 @@ public class FindingMaxBST {
     }
 
     public static void main(String a[]) throws Exception {
-        TreeNode root = BSTHelper.bstCreator();
+        TreeNode root = BSTHelper.createBst();
         FindingMaxBST obj = new FindingMaxBST();
         System.out.println(obj.findMax(root));
     }
