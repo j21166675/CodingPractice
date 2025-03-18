@@ -1,4 +1,4 @@
-package Sorting;
+package Recursive;
 
 import java.util.ArrayList;
 
