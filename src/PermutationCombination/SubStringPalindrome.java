@@ -1,4 +1,4 @@
-package Recursive;
+package PermutationCombination;
 import java.util.ArrayList;
 
 public class SubStringPalindrome {
@@ -9,8 +9,10 @@ public class SubStringPalindrome {
             System.out.println(slate);
         }
 
-        int pos = slate.length();
-        return findSubSet(slate+str.charAt(pos), str, results);
+        for(int i=0; i<str.length(); i++) {
+            findSubSet(slate + str.charAt(i+1), str, results);
+        }
+        return results;
 
     }
 
