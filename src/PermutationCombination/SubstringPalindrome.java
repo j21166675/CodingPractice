@@ -1,8 +1,11 @@
-package Recursive;
+package PermutationCombination;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubstringPalindrome {
+    ArrayList<String> currentSubset = new ArrayList<>();
+
     public void substring(String str, int i, ArrayList<String> slate) {
         if (i == str.length()) {
             System.out.println(slate.toString());
@@ -18,7 +21,7 @@ public class SubstringPalindrome {
 
     public boolean isPalindrome(String str, int i, int j) {
 
-        while(i<=j) {
+        while(i<j) {
              // System.out.println("i: " + str.charAt(i) + " j: " + str.charAt(j));
             if (str.charAt(i++) != str.charAt(j--)) {
                 return false;
@@ -26,8 +29,34 @@ public class SubstringPalindrome {
         }
         return true;
         }
+    public List<String> findAllSubsets(String str) {
+        List<String> subsets = new ArrayList<>();
+        generateSubsets(str, 0);
+        return subsets;
+    }
+
+    private void generateSubsets(String str, int index){
+        if (index == str.length()) {
+            System.out.println(currentSubset.toString());
+            return;
+        }
+
+        // Include the current character
+        currentSubset.add(String.valueOf(str.charAt(index)));
+        generateSubsets(str, index + 1);
+
+        // Exclude the current character
+        currentSubset.remove(currentSubset.size() - 1);
+        generateSubsets(str, index + 1);
+    }
+
     public static void main(String str[]){
         SubstringPalindrome obj = new SubstringPalindrome();
-        obj.substring("abaaba", 0, new ArrayList<String>());
+        obj.substring("121", 0, new ArrayList<String>());
+        String input = "12";
+        List<String> subsets = obj.findAllSubsets(input);
+       // System.out.println(subsets);
     }
 }
+
+

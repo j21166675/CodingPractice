@@ -82,7 +82,6 @@ public class BinaryPrinting {
                 }
             }
         }
-
     }
 
     public void printCaseVariation2(String slate, String str) {
@@ -100,7 +99,7 @@ public class BinaryPrinting {
 
     }
 
-    public ArrayList<ArrayList<String>> printSubSet(int i, String str, int k, int count) {
+    public ArrayList<ArrayList<String>> printSubSet(int i, String str) {
        /* if (i >= str.length()) {
             list.add(subset);
             System.out.println(subset.toString());
@@ -112,29 +111,45 @@ public class BinaryPrinting {
                 list.add((ArrayList)subset);
                 System.out.println(subset.toString());
             } else */
-if(i == str.length()) {
-    list.add(subset);
-    System.out.println(subset);
-}
-else {
-    subset.add(String.valueOf(str.charAt(i)));
-    printSubSet(i + 1, str, k, count);
-    subset.remove(subset.size() - 1);
-    printSubSet(i + 1, str, k, count);
+        if (i == str.length()) {
+            String slate = subset.toString();
+           if (isPalindrome(subset)) {
+                list.add((ArrayList<String>) subset.clone());
+            }
+            //list.add((ArrayList<String>) subset.clone());
+            //System.out.println(subset);
+        } else {
 
-}
+                subset.add(String.valueOf(str.charAt(i)));
+                printSubSet(i + 1, str);
+                subset.remove(subset.size() - 1);
+                printSubSet(i + 1, str);
+            }
         return list;
+    }
+    private Boolean isPalindrome(ArrayList<String> str) {
+        int first = 0, last = str.size() -1;
+
+        while(first < last){
+           // System.out.println(str.get(first));
+            // System.out.println(str.get(last));
+            if(!str.get(first).equals(str.get(last))){
+                return false;
+            }
+            else{
+                first++;
+                last--;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] a) {
         BinaryPrinting obj = new BinaryPrinting();
         System.out.println("--------------\n");
-        List<ArrayList<String>> list = obj.printSubSet(0,"123",3, 0);
-        System.out.println( " List count "+list.size());
+        List<ArrayList<String>> list = obj.printSubSet(0,"aba");
         for(ArrayList<String> l : list){
-            for(String s : l){
-                System.out.print(s);
-            }
+                System.out.println(l);
         }
         System.out.println("\n");
        // obj.printAlphaPractice("", "abc");
