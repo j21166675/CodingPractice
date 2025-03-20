@@ -11,29 +11,29 @@ public class PrintingBinaryTreeZigZagBFS {
     private ArrayList<ArrayList<Integer>> bfsZigzag(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
-        TreeNode node = null;
+        TreeNode tempTreeNode = null;
         queue.add(root);
-        Boolean revFlag = false;
-        while (queue.size() != 0) {
+        boolean revFlag = false;
+        int count = 0;
+        while (!queue.isEmpty()) {
             ArrayList<Integer> innerList = new ArrayList<Integer>();
             int len = queue.size();
             for (int i = 0; i < len; i++) {
-
-                node = queue.remove();
-                innerList.add(node.data);
-                System.out.println(node.data);
-
-                if (node.left != null) {
-                    queue.add(node.left);
+                tempTreeNode = queue.remove();
+                innerList.add(tempTreeNode.data);
+               // System.out.println(tempTreeNode.data);
+                if (tempTreeNode.left != null) {
+                    queue.add(tempTreeNode.left);
                 }
-                if (node.right != null) {
-                    queue.add(node.right);
+                if (tempTreeNode.right != null) {
+                    queue.add(tempTreeNode.right);
                 }
             }
-            if (revFlag) {
+            if (count % 2 == 0) {
                 Collections.reverse(innerList);
-                revFlag = false;
+
             }
+            count++;
             list.add(innerList);
         }
         return list;

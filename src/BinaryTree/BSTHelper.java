@@ -12,11 +12,7 @@ public class BSTHelper {
     }
 
     protected static TreeNode createBstFromSortedArr()throws Exception{
-        LevelOrderTraversal obj = new LevelOrderTraversal();
-        int[] sortedArray = new int[]{-10, 1, 2, 3, 4, 5, 6};
-        CreatingBinaryTree cbtObj = new CreatingBinaryTree();
-        TreeNode root = cbtObj.createBT(sortedArray, 0, sortedArray.length - 1);
-        return root;
+        return createBst();
     }
 
     protected static TreeNode createBstFromSortedArr(int[] sortedArray)throws Exception{

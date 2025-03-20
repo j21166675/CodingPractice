@@ -21,15 +21,15 @@ public class DepthFirstSearchImpl {
 
     private void inOrderTraversalPrinting(TreeNode root) {
         if (root == null) return;
-        preOrderTraversalPrinting(root.left);
+        inOrderTraversalPrinting(root.left);
         System.out.print(root.data+", ");
-        preOrderTraversalPrinting(root.right);
+        inOrderTraversalPrinting(root.right);
     }
 
     private void postOrderTraversalPrinting(TreeNode root) {
         if (root == null) return;
-        preOrderTraversalPrinting(root.left);
-        preOrderTraversalPrinting(root.right);
+        postOrderTraversalPrinting(root.left);
+        postOrderTraversalPrinting(root.right);
         System.out.print(root.data+", ");
     }
 
