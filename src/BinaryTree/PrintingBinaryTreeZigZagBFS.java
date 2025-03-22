@@ -7,8 +7,7 @@ import java.util.Queue;
 
 public class PrintingBinaryTreeZigZagBFS {
 
-
-    private ArrayList<ArrayList<Integer>> bfsZigzag(TreeNode root) {
+    ArrayList<ArrayList<Integer>> bfsZigzag(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
         TreeNode tempTreeNode = null;
@@ -20,8 +19,12 @@ public class PrintingBinaryTreeZigZagBFS {
             int len = queue.size();
             for (int i = 0; i < len; i++) {
                 tempTreeNode = queue.remove();
-                innerList.add(tempTreeNode.data);
+
                // System.out.println(tempTreeNode.data);
+
+                innerList.add(tempTreeNode.data);
+
+
                 if (tempTreeNode.left != null) {
                     queue.add(tempTreeNode.left);
                 }
@@ -30,8 +33,7 @@ public class PrintingBinaryTreeZigZagBFS {
                 }
             }
             if (count % 2 == 0) {
-                Collections.reverse(innerList);
-
+                 // Collections.reverse(innerList);
             }
             count++;
             list.add(innerList);

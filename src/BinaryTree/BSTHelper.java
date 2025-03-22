@@ -5,14 +5,18 @@ import java.util.ArrayList;
 public class BSTHelper {
     protected static TreeNode createBst()throws Exception{
         LevelOrderTraversal obj = new LevelOrderTraversal();
-        int[] sortedArray = new int[]{-10, 1, 2, 3, 4, 5, 6};
+        int[] sortedArray = new int[]{1,2,3,4,5,6,7};
         CreatingBinaryTree cbtObj = new CreatingBinaryTree();
         TreeNode root = cbtObj.createBT(sortedArray, 0, sortedArray.length - 1);
         return root;
     }
 
     protected static TreeNode createBstFromSortedArr()throws Exception{
-        return createBst();
+        LevelOrderTraversal obj = new LevelOrderTraversal();
+        int[] sortedArray = new int[]{-10, 1, 2, 3, 4, 5, 6};
+        CreatingBinaryTree cbtObj = new CreatingBinaryTree();
+        TreeNode root = cbtObj.createBT(sortedArray, 0, sortedArray.length - 1);
+        return root;
     }
 
     protected static TreeNode createBstFromSortedArr(int[] sortedArray)throws Exception{
