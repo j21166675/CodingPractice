@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BSTHelper {
     protected static TreeNode createBst()throws Exception{
         LevelOrderTraversal obj = new LevelOrderTraversal();
-        int[] sortedArray = new int[]{1,2,3,4,5,6,7};
+        int[] sortedArray = new int[]{5,5,5,5,5,5};
         CreatingBinaryTree cbtObj = new CreatingBinaryTree();
         TreeNode root = cbtObj.createBT(sortedArray, 0, sortedArray.length - 1);
         return root;

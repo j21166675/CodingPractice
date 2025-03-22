@@ -1,7 +1,7 @@
 package BinaryTree;
 
 public class DiameterOfBinaryTree {
-    public static int diameter = 0;
+    int diameter;
     public int findDiameter(TreeNode root){
         diameter = 0;
         findDiameterHelper(root);
