@@ -21,7 +21,7 @@ class HeapSortImpl {
 
     public void heapify(int root_node){
         int max_node = root_node;
-        int left_child = root_node * 2 ;
+        int left_child = root_node * 2+1 ;
         int right_child = left_child + 1;
 
         if(left_child < size){
@@ -50,7 +50,7 @@ class HeapSortImpl {
         return max;
     }
     public static void main(String a[]){
-        HeapSortImpl obj = new HeapSortImpl(new int[]{1,5,4,3,2});
+        HeapSortImpl obj = new HeapSortImpl(new int[]{1,2,3,4,5});
         while(obj.getSize() > 0){
             System.out.print(obj.poll() + ",");
         }
