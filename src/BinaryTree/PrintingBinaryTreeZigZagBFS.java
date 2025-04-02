@@ -44,12 +44,7 @@ public class PrintingBinaryTreeZigZagBFS {
     public static void main(String a[]) throws Exception {
         TreeNode root = BSTHelper.createBst();
         PrintingBinaryTreeZigZagBFS obj2 = new PrintingBinaryTreeZigZagBFS();
-        for (ArrayList<Integer> i : obj2.bfsZigzag(root)) {
-            for (int j : i) {
-                System.out.print(" " + j);
-            }
-            System.out.print('\n');
-        }
+        BinaryTreePrinter.printBinaryTree(root);
     }
 
 }

@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class ValidParanthesis {
     public static void main(String[] s) throws Exception {
         ValidParanthesis obj = new ValidParanthesis();
-        System.out.println(obj.isValidExp("()()()(){}{}{}[][][]"));
+        System.out.println(obj.isValidUsingStack("()"));
 
-        System.out.println(obj.longestValidParentheses("()(()"));
+        //System.out.println(obj.longestValidParentheses("()(()"));
     }
 
     public int longestValidParentheses(String s) {
@@ -85,6 +86,25 @@ public class ValidParanthesis {
             }
         }
         return list.size() <= 0;
+    }
+    // USing Stack
+    private boolean isValidUsingStack(String s){
+        Map<Character, Character> map = retMap();
+        if(s == null)
+            return false;
+        Stack<Character> stack = new Stack<>();
+        for(char ch:s.toCharArray()){
+            if(stack.isEmpty()){
+                stack.push(ch);
+            }
+            else if (stack.peek() == map.get(ch)){
+                stack.pop();
+            }
+            else {
+                stack.push(ch);
+            }
+        }
+        return stack.isEmpty();
     }
 
     private Map<Character, Character> retMap() {
