@@ -35,15 +35,30 @@ public class Graphs {
 
     public static void createAdjacentList(int size){
         Graphs g = new Graphs(size);
+      /*  addEdges(0, 2, true);
+        addEdges(0, 3, true);
         addEdges(0, 1, true);
-        addEdges(0, 2, true);
         addEdges(1, 0, true);
-        addEdges(1, 2, true);
         addEdges(2, 0, true);
-        addEdges(2, 1, true);
-        addEdges(2, 3, true);
         addEdges(2, 4, true);
-        addEdges(3, 2, true);
-        addEdges(4, 2, true);
+        addEdges(2, 3, true);
+        addEdges(3, 0, true);
+        addEdges(4, 2, true); */
+
+
+        // Input for VAlid Tree
+
+       /* addEdges(0, 1, true);
+        addEdges(0, 2, true);
+        addEdges(1, 3, true);
+        addEdges(2, 4, true);*/
+
+        //Star Tree
+
+    /*    addEdges(0, 1, true);
+        addEdges(0, 2, true);
+        addEdges(0, 3, true);
+        addEdges(0, 4, true);*/
+
     }
 }

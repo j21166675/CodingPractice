@@ -33,8 +33,8 @@ public class BFSImplementation {
     public static void main(String[] a){
         Graphs.createAdjacentList(5);
         //Graphs.printNeighbours(2);
-
         BFSImplementation obj = new BFSImplementation();
         obj.bfs(0);
+
     }
 }
