@@ -12,11 +12,11 @@ public class BinaryPrinting {
     }
 
     public void printBinary(String slate, int n) {
-       // System.out.println("n "+n);
-      //  System.out.println("slate "+ slate);
+       //System.out.println("n "+n);
+       //System.out.println("slate "+ slate);
 
         if (n == 0) {
-            System.out.println( slate);
+            System.out.println("printing " + slate);
         } else {
             printBinary(slate + "0", n - 1);
             printBinary(slate + "1", n - 1);
@@ -24,13 +24,14 @@ public class BinaryPrinting {
 
     }
 
-    public void printAlphaPractice(String slate, String str){
+    public void printAlphaPractice(String slate, String str, int index) {
+        System.out.println("i " + index);
         if(str.length() == slate.length()){
             System.out.println(slate);
         }
         else{
             for(int i=0; i<str.length();i++){
-                printAlphaPractice(slate + str.charAt(i), str);
+                printAlphaPractice(slate + str.charAt(i), str, i);
             }
 
         }
@@ -127,6 +128,8 @@ public class BinaryPrinting {
             }
         return list;
     }
+
+
     private Boolean isPalindrome(ArrayList<String> str) {
         int first = 0, last = str.size() -1;
 
@@ -144,14 +147,29 @@ public class BinaryPrinting {
         return true;
     }
 
+    public void subArrayCount(int[] nums,int i, int target, int count, int sum, StringBuilder str){
+        str.append(nums[i] + ",");
+        System.out.println(str);
+        System.out.println(i);
+    if(i == nums.length-1){
+        System.out.println("Sum " + sum);
+        str.delete(0, str.length());
+    }
+    else{
+        sum += nums[i];
+        subArrayCount(nums, i+1, target, count, sum, str);
+    }
+    }
+
     public static void main(String[] a) {
         BinaryPrinting obj = new BinaryPrinting();
-        System.out.println("--------------\n");
-        List<ArrayList<String>> list = obj.printSubSet(0,"aba");
+        //System.out.println("--------------\n");
+       /* List<ArrayList<String>> list = obj.printSubSet(0,"aba");
         for(ArrayList<String> l : list){
                 System.out.println(l);
-        }
-        System.out.println("\n");
-       // obj.printAlphaPractice("", "abc");
+        }*/
+        System.out.println( );
+       // obj.subArrayCount(new int[]{1,2,3,4}, 0, 3, 0, 0, new StringBuilder(""));
+        obj.printDecimal("",4);
     }
 }

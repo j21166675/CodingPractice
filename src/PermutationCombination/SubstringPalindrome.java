@@ -52,9 +52,9 @@ public class SubstringPalindrome {
 
     public static void main(String str[]){
         SubstringPalindrome obj = new SubstringPalindrome();
-        obj.substring("121", 0, new ArrayList<String>());
-        String input = "12";
-        List<String> subsets = obj.findAllSubsets(input);
+        obj.substring("abcabbabc", 0, new ArrayList<String>());
+      //  String input = "abcabbabc";
+        //List<String> subsets = obj.findAllSubsets(input);
        // System.out.println(subsets);
     }
 }
