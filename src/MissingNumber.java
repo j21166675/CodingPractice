@@ -18,7 +18,6 @@ class MissingNumber {
         sum = (n*(n+1)/2) - sum;
         if(sum == 0)
             return n+1;
-
         return sum;
     }
     public static void main(String[] args) {
